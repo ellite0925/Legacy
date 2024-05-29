@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 import close from "../assets/layout/header/x.svg"
 
 interface CardProps {
@@ -8,6 +9,7 @@ interface CardProps {
 
 function Sidebar(props: CardProps) {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   return (
     <>
@@ -28,7 +30,7 @@ function Sidebar(props: CardProps) {
             </li>
           </ul>
           <p className="font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">{t("Marketplace")}</p>
-          <p className="font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">{t("ASNGE Token")}</p>
+          <p className="font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer" onClick={() => {navigate('/asgne_token')}}>{t("ASNGE Token")}</p>
           <p className="font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">{t("Media")}</p>
           <ul className="pl-4">
             <li>

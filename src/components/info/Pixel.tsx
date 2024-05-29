@@ -1,11 +1,13 @@
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 function Pixel() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   return (
     <>
-      <div className="md:container mx-auto pt-12 md:pt-24 py-24 flex flex-col space-y-8 px-4 md:px-0">
+      <div className="md:container mx-auto py-12 md:py-24 flex flex-col space-y-8 px-4 md:px-0">
         <div>
           <p className="font-trispace text-3xl font-bold leading-9">
             {t("PIXEL Collection")}
@@ -25,7 +27,7 @@ function Pixel() {
               Magna montes pharetra ac libero non aliquet. Orci neque mi justo scelerisque in. Nibh amet egestas mattis at consectetur vulputate lacus nisi molestie. 
             </p>
             <div className="mt-6 py-3 flex">
-              <p className="font-news text-lg font-bold leading-5 border-[#F38E0C] border-b-2">
+              <p onClick={() => {navigate('/full_collection')}} className="cursor-pointer font-news text-lg font-bold leading-5 border-[#F38E0C] border-b-2">
                 {t("View the full collection")}
               </p>
             </div>
@@ -58,7 +60,7 @@ function Pixel() {
                 </div>
               </div>
             </div>
-              <button className="border-[#F38E0C] border-2 mt-10 w-full py-[14px] rounded-[10px]">
+              <button className="border-[#F38E0C] border-2 mt-10 w-full py-[14px] rounded-[10px]" onMouseEnter={(e) => { e.currentTarget.style.boxShadow = "0px 0px 24px 0px #E8A241" }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "none" }}>
                 <p className="font-news font-normal text-lg leading-5 text-[#F38E0C]">{t("Connect To MINT")}</p>
               </button>
           </div>

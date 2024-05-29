@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 import chaos from "../../assets/home/discover/chaos.png";
 import chaos_dark from "../../assets/home/discover/chaos-dark.png";
 import draft from "../../assets/home/discover/draft.png";
@@ -7,6 +8,7 @@ import fox from "../../assets/home/discover/fox.png";
 
 function Discover() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   return (
     <>
@@ -14,12 +16,12 @@ function Discover() {
         <img className="dark:hidden w-full absolute top-0 lg:inline lg:relative" src={chaos} />
         <img className="hidden dark:inline w-full" src={chaos_dark} />
         
-        <div className="w-full h-full lg:absolute lg:top-0">
+        <div className="w-full h-full lg:absolute lg:top-0 px-4 md:px-0">
           <div className="md:container mx-auto flex z-10 relative h-full items-center flex-row">
             <div className="flex-1 lg:my-0 my-12 items-center md:items-start flex flex-col">
               <p className="mt-4 font-trispace text-3xl md:text-5xl font-normal leading-[45px] tracking-wider text-center md:text-left">{t("Discover, and collect with benefits Digital Art  NFTs")} </p>
               <p className="mt-6 font-dm text-md md:text-xl font-normal leading-8 text-center md:text-left">Non tempor turpis quisque commodo diam eget aliquet convallis risus. Suspendisse accumsan fringilla volutpat commodo sit fermentum. In nisl.</p>
-              <button className="mt-6 w-[200px] h-[50px] rounded-xl bg-[#F38E0C] text-white" style={{boxShadow: "0px 0px 24px 0px #E8A241"}}>{t("Collections")}</button>
+              <button onClick={() => {navigate('/info_collection')}} className="mt-6 w-[200px] h-[50px] rounded-xl bg-[#F38E0C] text-white" onMouseEnter={(e) => { e.currentTarget.style.boxShadow = "0px 0px 24px 0px #E8A241" }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "none" }}>{t("Collections")}</button>
               <div className="mt-6 flex space-x-5 md:space-x-10">
                 <div>
                   <div className="flex">
@@ -72,8 +74,8 @@ function Discover() {
           </div>
         </div>
       </div>
-      <div className="bg-[#F7F9FB] dark:bg-black py-16 flex flex-col items-center">
-        <p className="font-trispace font-bold text-xs xs:text-lg sm:text-xl md:text-2xl lg:text-3xl leading-10 text-black dark:text-white">{t("UNPRUNABLE UTXO ART, BECAUSE SATS DON'T EXIST")}</p>
+      <div className="bg-[#F7F9FB] dark:bg-black py-16 flex flex-col items-center px-4 md:px-0">
+        <p className="text-center font-trispace font-bold text-xs xs:text-lg sm:text-xl md:text-2xl lg:text-3xl leading-10 text-black dark:text-white">{t("UNPRUNABLE UTXO ART, BECAUSE SATS DON'T EXIST")}</p>
         <p className="font-trispace font-bold text-xs xs:text-lg sm:text-xl md:text-2xl lg:text-3xl leading-10 text-black dark:text-white">{t("OF NFTS IN A NEW WORK.")}</p>
         <p className="mt-5 py-2.5 border-b-2 border-[#F38E0C]">{t("Read More")}</p>
       </div>

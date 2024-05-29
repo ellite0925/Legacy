@@ -14,10 +14,39 @@ import LegacyAccordion from "../components/layout/footer/LegacyAccordion";
 function Footer() {
   const { t } = useTranslation();
   const [language, setLanguage] = useState("Eng");
+  const [isDark, setIsDark] = useState("false");
+
+  const handleThemeToggle = () => {
+    if (isDark == "false") {
+      document.documentElement.classList.add('dark');
+      setIsDark("true");
+      localStorage.setItem('isDark', "true");
+    } else {
+      document.documentElement.classList.remove('dark');
+      setIsDark("false");
+      localStorage.setItem('isDark', "false");
+    }
+    // document.documentElement.classList.toggle('dark');
+  }
 
   useEffect(() => {
     // Get the specific item from localStorage
     const language = localStorage.getItem('language');
+    const local_isDark = localStorage.getItem('isDark');
+    
+    // Use the specific item as needed
+    if (local_isDark) {
+      // Do something with the specific item
+      setIsDark(local_isDark);
+      if (local_isDark == "false") {
+        document.documentElement.classList.remove('dark');
+      } else {
+        document.documentElement.classList.add('dark');
+      }
+    } else {
+      localStorage.setItem('isDark', "false");
+      setIsDark("false");
+    }
 
     // Use the specific item as needed
     if (language) {
@@ -39,10 +68,10 @@ function Footer() {
 
   return (
     <>
-      <div className="bg-[#F7F9FB] dark:bg-[#F38E0C]">
+      <div className="bg-[#F7F9FB] dark:bg-[#F38E0C] px-4 md:px-0">
         <div className="md:container mx-auto py-12 md:py-24 text-black dark:text-black">
           <p className="font-trispace text-xl md:text-3xl font-medium leading-8 pl-4 md:pl-0">{t("Frequently asked questions")}</p>
-          <div className="mt-12 flex space-y-12 md:space-y-0 md:space-x-24 w-full flex-col md:flex-row">
+          <div className="mt-12 flex space-y-0 md:space-y-0 md:space-x-24 w-full flex-col md:flex-row">
             <div className="md:basis-1/2 basis-1">
               <div className="bg-[#282828] w-full h-[0.5px]"></div>
               <LegacyAccordion title="How do I register?" description="Proin elementum nam ac quam cras semper fermentum. Adipiscing diam ut leo nam consequat fermentum. Habitant cras enim nunc vestibulum purus egestas. Vitae auctor massa eros lacus hendrerit. Eu viverra sit enim odio ut." />
@@ -53,7 +82,7 @@ function Footer() {
               <div className="bg-[#282828] w-full h-[0.5px]"></div>
             </div>
             <div className="basis-1/2">
-              <div className="bg-[#282828] w-full h-[0.5px]"></div>
+              <div className="bg-[#282828] w-full h-[0.5px] hidden md:block"></div>
               <LegacyAccordion title="Why do I need to verify my identity?" description="Proin elementum nam ac quam cras semper fermentum. Adipiscing diam ut leo nam consequat fermentum. Habitant cras enim nunc vestibulum purus egestas. Vitae auctor massa eros lacus hendrerit. Eu viverra sit enim odio ut." />
               <div className="bg-[#282828] w-full h-[0.5px]"></div>
               <LegacyAccordion title="What is on NFTs?" description="Proin elementum nam ac quam cras semper fermentum. Adipiscing diam ut leo nam consequat fermentum. Habitant cras enim nunc vestibulum purus egestas. Vitae auctor massa eros lacus hendrerit. Eu viverra sit enim odio ut." />
@@ -79,42 +108,61 @@ function Footer() {
               <p>{t("Join our community")}</p>
             </div>
             <div className="mt-6 flex space-x-4 items-center justify-center lg:justify-start">
-              <img className="inline dark:hidden" src={discord} />
-              <img className="inline dark:hidden" src={instagram} />
-              <img className="inline dark:hidden" src={twitter} />
-              <img className="hidden dark:inline" src={discord_dark} />
-              <img className="hidden dark:inline" src={instagram_dark} />
-              <img className="hidden dark:inline" src={twitter_dark} />
+              <button onClick={() => {window.location.href = 'https://discord.com'}}>
+                <img className="inline dark:hidden" src={discord} />
+                <img className="hidden dark:inline" src={discord_dark} />
+              </button>
+              <button onClick={() => {window.location.href = 'https://twitter.com'}}>
+                <img className="inline dark:hidden" src={twitter} />
+                <img className="hidden dark:inline" src={twitter_dark} />
+              </button>
+              <button onClick={() => {window.location.href = 'https://instagram.com'}}>
+                <img className="inline dark:hidden" src={instagram} />
+                <img className="hidden dark:inline" src={instagram_dark} />
+              </button>
             </div>
           </div>
           <div className="flex space-x-8 lg:space-x-32 items-start justify-center mt-12 lg:mt-0">
-            <div>
+            <div className='flex flex-col items-start'>
               <p className="font-trispace text-xl font-semibold leading-8">{t("Explore")}</p>
-              <p className="font-trispace text-base font-normal leading-6 mt-6">{t("Partners")}</p>
-              <p className="font-trispace text-base font-normal leading-6 mt-5">{t("Contact us")}</p>
-              <p className="font-trispace text-base font-normal leading-6 mt-5">{t("Connect a wallet")}</p>
+              <button className="hover:text-[#E8A241] mt-6" onClick={() => {window.location.href = 'https://example.com'}}>
+                <p className="font-trispace text-base font-normal leading-6">{t("Partners")}</p>
+              </button>
+              <button className="hover:text-[#E8A241] mt-5" onClick={() => {window.location.href = 'https://example.com'}}>
+                <p className="font-trispace text-base font-normal leading-6">{t("Contact us")}</p>
+              </button>
+              <button className="hover:text-[#E8A241] mt-5" onClick={() => {window.location.href = 'https://example.com'}}>
+                <p className="font-trispace text-base font-normal leading-6">{t("Connect a wallet")}</p>
+              </button>
             </div>
-            <div>
+            <div className='flex flex-col items-start'>
               <p className="font-trispace text-xl font-semibold leading-8">{t("Legal")}</p>
-              <p className="font-trispace text-base font-normal leading-6 mt-6">{t("Privacy Policy")}</p>
-              <p className="font-trispace text-base font-normal leading-6 mt-5">{t("Terms & Conditions")}</p>
+              <button className="hover:text-[#E8A241] mt-6" onClick={() => {window.location.href = 'https://example.com'}}>
+                <p className="font-trispace text-base font-normal leading-6">{t("Privacy Policy")}</p>
+              </button>
+              <button className="hover:text-[#E8A241] mt-5" onClick={() => {window.location.href = 'https://example.com'}}>
+                <p className="font-trispace text-base font-normal leading-6">{t("Terms & Conditions")}</p>
+              </button>
             </div>
           </div>
         </div>
 
         <div>
           <div className="w-full h-[1px] bg-[#858584] dark:bg-[#525253]"></div>
-          <div className="mb-3.5 mt-3.5 flex justify-between items-center">
-            <p className="font-noto font-normal text-xs leading-3">{t("Copyrights &copy; 2024 LegacyToken. All rights reserved.")}</p>
-            <div className="flex space-x-1.5 items-center">
-              <img src={us} />
-              <select className="font-trispace font-normal text-sm leading-4" onChange={handleLanguageChange} value={language}>
-                <option>Eng</option> {/* English */}
-                <option>Fr</option> {/* French */}
-                <option>De</option> {/* German */}
-                <option>Es</option> {/* Spanish */}
-                <option>Zh</option> {/* Chinese */}
-              </select>
+          <div className="mx-4 mb-3.5 mt-3.5 flex justify-between items-center flex-col sm:flex-row space-y-4 sm:space-y-0">
+            <p className="font-noto font-normal text-xs leading-3 text-center">{t("Copyrights &copy; 2024 LegacyToken. All rights reserved.")}</p>
+            <div className='flex space-x-4'>
+              <button onClick={handleThemeToggle}>Toggle Theme</button>
+              <div className="flex space-x-1.5 items-center">
+                <img src={us} />
+                <select className="dark:bg-black font-trispace font-normal text-sm leading-4" onChange={handleLanguageChange} value={language}>
+                  <option>Eng</option> {/* English */}
+                  <option>Fr</option> {/* French */}
+                  <option>De</option> {/* German */}
+                  <option>Es</option> {/* Spanish */}
+                  <option>Zh</option> {/* Chinese */}
+                </select>
+              </div>
             </div>
           </div>
         </div>

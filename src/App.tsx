@@ -6,12 +6,14 @@ import InfoCollection from './pages/InfoCollection';
 import SingleStamp from './pages/SingleStamp';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import TestPage from './pages/TestPage';
 
 function App() {
   return (
     <>
       <Router>
         <Routes>
+          <Route path="/test" element={<TestPage />} />
           <Route path="/" element={<HomePage />} />
           <Route path="/info_collection" element={<InfoCollection />} />
           <Route path="/full_collection" element={<FullCollection />} />

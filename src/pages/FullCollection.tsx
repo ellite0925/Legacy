@@ -48,7 +48,7 @@ function SingleStamp() {
         <img src={chaos_dark} className="w-full absolute z-0 hidden dark:inline" />
         <div className="w-full h-full relative z-10">
           <div className="md:container mx-auto py-12 md:py-24">
-            <p className="mt-6 text-center font-trispace font-semibold text-3xl leading-8">{t("UNPRUNABLE UTXO ART, BECAUSE SATS DON'T EXIST")}</p>
+            <p className="mt-6 text-center font-trispace font-semibold text-3xl leading-8 px-4 md:px-0">{t("UNPRUNABLE UTXO ART, BECAUSE SATS DON'T EXIST")}</p>
             <div className='w-full flex justify-center'>
               <div className="mt-16 bg-opacity-62 dark:bg-[#19191F] dark:bg-opacity-[62%] py-6 pl-12 pr-8 flex justify-between items-center rounded-[10px] mb-16 flex-col md:flex-row w-2/3 md:w-full space-y-4 md:space-y-0" style={{boxShadow: "0px 4px 40px 0px #00000026"}}>
                 <div className="flex space-x-4 md:space-x-12 items-center flex-col md:flex-row space-y-4 md:space-y-0">

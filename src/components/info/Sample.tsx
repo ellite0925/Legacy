@@ -7,7 +7,7 @@ function Sample() {
 
   return (
     <>
-    <div className="bg-[#F7F9FB] dark:bg-black py-0 md:py-24 md:pt-0">
+    <div className="bg-[#F7F9FB] dark:bg-black py-8 md:py-24">
       <p className="text-center font-trispace font-medium text-xl md:text-3xl leading-8">{t("Samples of Collection")}</p>
 
       <img className="w-full mt-16 inline dark:hidden" src={carousel} />

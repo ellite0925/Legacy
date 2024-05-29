@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 import eth from "../../assets/full/card/eth.png"
 import eth_yellow from "../../assets/full/card/eth-yellow.png"
 
@@ -12,10 +13,11 @@ interface CardProps {
 
 function Card(props: CardProps) {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   return (
     <>
-      <div className="bg-[#D9E0EC] bg-opacity-20 dark:bg-[#19191F] dark:bg-opacity-[72%] rounded-xl p-[10px] dark:border-2 dark:border-[#F2F2F2] dark:border-opacity-50">
+      <div onClick={() => {navigate('/single_stamp')}} className="cursor-pointer bg-[#D9E0EC] bg-opacity-20 dark:bg-[#19191F] dark:bg-opacity-[72%] rounded-xl p-[10px] dark:border-2 dark:border-[#F2F2F2] dark:border-opacity-50">
         <img className="w-full" src={props.image} />
         <p className="pt-4 font-trispace font-normal text-base leading-5">{t(props.title)}</p>
         <div className="pt-2 flex items-center space-x-1">
