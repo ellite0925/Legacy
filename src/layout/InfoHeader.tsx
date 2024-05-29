@@ -20,20 +20,39 @@ function InfoHeader() {
                 </div>
                 <div className="flex space-x-6 items-center">
                   <div className="flex space-x-6 items-center text-sm font-trispace font-normal leading-4">
-                    <div className="flex space-x-2 items-center">
-                      <p>Collection</p>
+                    <div className="flex items-center relative group">
+                      <p className="mr-2">Collection</p>
                       <img src={white_down_arrow} />
+                      <div className="text-black dark:text-white absolute group-hover:block hidden bg-white dark:bg-[#313131] rounded-xl p-2 top-6 left-0 z-20 w-[200px] border-[0.5px] border-black border-opacity-10" style={{boxShadow: "0px 10px 15px 0px #0000000D, 0px 25px 37px 0px #0000001A"}}>
+                        <p className="font-trispace font-normal text-sm leading-5 pl-2 py-3">Collections</p>
+                        <div className="mt-1 w-full h-[1px] bg-[#E4E4EB] dark:bg-[#4F4F4F]"></div>
+                        <p className="mt-1 font-trispace font-normal text-sm leading-5 pl-2 py-3">Proof Of Publishing</p>
+                      </div>
                     </div>
                     <p>Marketplace</p>
                     <p>ASNGE Token</p>
-                    <div className="flex space-x-2 items-center">
-                      <p>Media</p>
+                    <div className="flex items-center relative group">
+                      <p className="mr-2">Media</p>
                       <img src={white_down_arrow} />
+                      <div className="text-black dark:text-white absolute group-hover:block hidden bg-white dark:bg-[#313131] rounded-xl p-2 top-6 left-0 z-20 w-[200px] border-[0.5px] border-black border-opacity-10" style={{boxShadow: "0px 10px 15px 0px #0000000D, 0px 25px 37px 0px #0000001A"}}>
+                        <p className="font-trispace font-normal text-sm leading-5 pl-2 py-3">Articles</p>
+                        <div className="mt-1 w-full h-[1px] bg-[#E4E4EB] dark:bg-[#4F4F4F]"></div>
+                        <p className="mt-1 font-trispace font-normal text-sm leading-5 pl-2 py-3">VIP Gallery</p>
+                        <div className="mt-1 w-full h-[1px] bg-[#E4E4EB] dark:bg-[#4F4F4F]"></div>
+                        <p className="mt-1 font-trispace font-normal text-sm leading-5 pl-2 py-3">NFT Games</p>
+                      </div>
                     </div>
                     <p>Metaverse</p>
-                    <div className="flex space-x-2 items-center">
-                      <p>About</p>
+                    <div className="flex items-center relative group">
+                      <p className="mr-2">About</p>
                       <img src={white_down_arrow} />
+                      <div className="text-black dark:text-white absolute group-hover:block hidden bg-white dark:bg-[#313131] rounded-xl p-2 top-6 left-0 z-20 w-[200px] border-[0.5px] border-black border-opacity-10" style={{boxShadow: "0px 10px 15px 0px #0000000D, 0px 25px 37px 0px #0000001A"}}>
+                        <p className="font-trispace font-normal text-sm leading-5 pl-2 py-3">About ASNGE Project</p>
+                        <div className="mt-1 w-full h-[1px] bg-[#E4E4EB] dark:bg-[#4F4F4F]"></div>
+                        <p className="mt-1 font-trispace font-normal text-sm leading-5 pl-2 py-3">Manifesto</p>
+                        <div className="mt-1 w-full h-[1px] bg-[#E4E4EB] dark:bg-[#4F4F4F]"></div>
+                        <p className="mt-1 font-trispace font-normal text-sm leading-5 pl-2 py-3">Partners</p>
+                      </div>
                     </div>
                     <p>FAQ</p>
                   </div>

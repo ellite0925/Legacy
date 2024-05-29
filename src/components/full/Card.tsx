@@ -12,8 +12,8 @@ interface CardProps {
 function Card(props: CardProps) {
   return (
     <>
-      <div className="bg-[#D9E0EC] bg-opacity-20 rounded-xl p-[10px]">
-        <img src={props.image} />
+      <div className="bg-[#D9E0EC] bg-opacity-20 dark:bg-[#19191F] dark:bg-opacity-[72%] rounded-xl p-[10px] dark:border-2 dark:border-[#F2F2F2] dark:border-opacity-50">
+        <img className="w-full" src={props.image} />
         <p className="pt-4 font-trispace font-normal text-base leading-5">{props.title}</p>
         <div className="pt-2 flex items-center space-x-1">
           <img src={eth} />

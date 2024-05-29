@@ -1,6 +1,7 @@
 import Footer from "../layout/Footer"
 import Header from "../layout/Header"
 import chaos from "../assets/home/discover/chaos.png"
+import chaos_dark from "../assets/home/discover/chaos-dark.png"
 import arrow_right from "../assets/full/arrow-right.png"
 import YellowButton from "../components/common/YellowButton"
 import Card from "../components/full/Card"
@@ -32,20 +33,21 @@ function SingleStamp() {
     <>
       <Header />
       <div className="relative">
-        <img src={chaos} className="w-full absolute z-0" />
+        <img src={chaos} className="w-full absolute z-0 inline dark:hidden" />
+        <img src={chaos_dark} className="w-full absolute z-0 hidden dark:inline" />
         <div className="w-full h-full relative z-10">
           <div className="md:container mx-auto py-24">
             <p className="mt-6 text-center font-trispace font-semibold text-3xl leading-8">UNPRUNABLE UTXO ART, BECAUSE SATS DON'T EXIST</p>
-            <div className="mt-16 bg-opacity-62 py-6 pl-12 pr-8 flex justify-between items-center rounded-[10px] mb-16" style={{boxShadow: "0px 4px 40px 0px #00000026"}}>
+            <div className="mt-16 bg-opacity-62 dark:bg-[#19191F] dark:bg-opacity-[62%] py-6 pl-12 pr-8 flex justify-between items-center rounded-[10px] mb-16" style={{boxShadow: "0px 4px 40px 0px #00000026"}}>
               <div className="flex space-x-12 items-center">
                 <div className="flex flex-col space-y-1">
-                  <p className="font-news font-normal text-lg leading-5">Name</p>
-                  <p className="font-trispace font-normal text-lg leading-5 text-[#969696]">Stamp / Creator / TX / CPID</p>
+                  <p className="font-news font-semibold text-lg leading-5">Name</p>
+                  <p className="font-trispace font-normal text-lg leading-5 text-[#969696] dark:text-[#ECECEC]">Stamp / Creator / TX / CPID</p>
                 </div>
                 <div className="w-[1px] h-[60px] bg-[#969696]"></div>
                 <div className="flex flex-col space-y-1">
-                  <p className="font-news font-normal text-lg leading-5">Stamps</p>
-                  <p className="font-trispace font-normal text-lg leading-5 text-[#969696]">Stamps: Classic</p>
+                  <p className="font-news font-semibold text-lg leading-5">Stamps</p>
+                  <p className="font-trispace font-normal text-lg leading-5 text-[#969696] dark:text-[#ECECEC]">Stamps: Classic</p>
                 </div>
               </div>
               <YellowButton title="Search" width={200} height={50} />
@@ -91,7 +93,7 @@ function SingleStamp() {
               </div>
             </div>
 
-            <div className="bg-[#E4E4EB] h-[1px] w-full my-8"></div>
+            <div className="bg-[#E4E4EB] dark:bg-[#626264] h-[1px] w-full my-8"></div>
             <div className="flex justify-center">
               <YellowButton title="Load More" width={200} height={50} shadow />
             </div>

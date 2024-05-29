@@ -1,14 +1,20 @@
 import Footer from "../layout/Footer"
 import Header from "../layout/Header"
 import chaos from "../assets/home/discover/chaos.png"
+import chaos_dark from "../assets/home/discover/chaos-dark.png"
 import collection from "../assets/single/collection.png"
 import creator from "../assets/single/creator.png"
 import tetris from "../assets/single/tetris.png"
 import copy_icon from "../assets/single/copy-icon.png"
+import copy_icon_dark from "../assets/single/copy-icon-dark.png"
 import like from "../assets/single/like.png"
 import download from "../assets/single/download.png"
 import twitter from "../assets/single/twitter.png"
 import copy from "../assets/single/copy.png"
+import like_dark from "../assets/single/like-dark.png"
+import download_dark from "../assets/single/download-dark.png"
+import twitter_dark from "../assets/single/twitter-dark.png"
+import copy_dark from "../assets/single/copy-dark.png"
 import YellowButton from "../components/common/YellowButton"
 
 function SingleStamp() {
@@ -17,7 +23,8 @@ function SingleStamp() {
     <>
       <Header />
       <div className="relative">
-        <img src={chaos} className="w-full absolute z-0" />
+        <img src={chaos} className="w-full absolute z-0 inline dark:hidden" />
+        <img src={chaos_dark} className="w-full absolute z-0 hidden dark:inline" />
         <div className="w-full h-full relative z-10">
           <div className="md:container mx-auto py-16">
             <p className="font-trispace font-medium text-4xl leading-[46px]">Stamp 67114 A10028994648006722000</p>
@@ -30,7 +37,7 @@ function SingleStamp() {
                       <img src={collection} />
                     </div>
                     <div className="flex-1 flex flex-col justify-between">
-                      <p className="font-noto font-normal text-base leading-6 text-[#636363]">Collection</p>
+                      <p className="font-noto font-normal text-base leading-6 text-[#636363] dark:text-[#ECECEC]">Collection</p>
                       <p className="font-trispace font-bold text-xl leading-6">PIXEL</p>
                     </div>
                   </div>
@@ -44,7 +51,7 @@ function SingleStamp() {
                     </div>
                   </div>
                 </div>
-                <p className="mt-8 text-[#636363] font-normal text-base leading-6">Magna montes pharetra ac libero non aliquet. Orci neque mi justo scelerisque in. Nibh amet egestas mattis at consectetur vulputate lacus nisi molestie. </p>
+                <p className="mt-8 text-[#636363] dark:text-[#ECECEC] font-normal text-base leading-6">Magna montes pharetra ac libero non aliquet. Orci neque mi justo scelerisque in. Nibh amet egestas mattis at consectetur vulputate lacus nisi molestie. </p>
                 <div className="mt-8 flex space-x-10">
                   <div className="basis-1/2 flex flex-col space-y-2 items-center">
                     <p className="font-noto font-normal text-base leading-7">Current Price</p>
@@ -64,7 +71,7 @@ function SingleStamp() {
                 <div className="mt-6">
                   <YellowButton title="Connect To MINT" height={50} fullWidth shadow />
                 </div>
-                <div className="mt-8 rounded-xl bg-[#D9E0EC] bg-opacity-20 border-2 border-opacity-50 border-[#F2F2F2] p-6 flex flex-col space-y-[10px]">
+                <div className="mt-8 rounded-xl bg-[#D9E0EC] dark:bg-black bg-opacity-20 border-2 border-opacity-50 border-[#F2F2F2] p-6 flex flex-col space-y-[10px]">
                   <p className="font-news font-bold text-2xl leading-7 opacity-100">
                     Information
                   </p>
@@ -76,14 +83,16 @@ function SingleStamp() {
                     <p className="font-trispace font-normal text-base leading-6">Asset Name</p>
                     <div className="flex space-x-2 items-center">
                       <p className="font-trispace font-normal text-base leading-6">A10028994648006722000</p>
-                      <img src={copy_icon} />
+                      <img className="inline dark:hidden" src={copy_icon} />
+                      <img className="hidden dark:inline" src={copy_icon_dark} />
                     </div>
                   </div>
                   <div className="flex justify-between">
                     <p className="font-trispace font-normal text-base leading-6">Issuer</p>
                     <div className="flex space-x-2 items-center">
                       <p className="font-trispace font-normal text-base leading-6">1K6xT...3Rggi</p>
-                      <img src={copy_icon} />
+                      <img className="inline dark:hidden" src={copy_icon} />
+                      <img className="hidden dark:inline" src={copy_icon_dark} />
                     </div>
                   </div>
                   <div className="flex justify-between">
@@ -106,7 +115,8 @@ function SingleStamp() {
                     <p className="font-trispace font-normal text-base leading-6">Block</p>
                     <div className="flex space-x-2 items-center">
                       <p className="font-trispace font-normal text-base leading-6">794220</p>
-                      <img src={copy_icon} />
+                      <img className="inline dark:hidden" src={copy_icon} />
+                      <img className="hidden dark:inline" src={copy_icon_dark} />
                     </div>
                   </div>
                   <div className="flex justify-between">
@@ -117,7 +127,8 @@ function SingleStamp() {
                     <p className="font-trispace font-normal text-base leading-6">Transaction</p>
                     <div className="flex space-x-2 items-center">
                       <p className="font-trispace font-normal text-base leading-6">9ad0b...5ab5b</p>
-                      <img src={copy_icon} />
+                      <img className="inline dark:hidden" src={copy_icon} />
+                      <img className="hidden dark:inline" src={copy_icon_dark} />
                     </div>
                   </div>
                 </div>
@@ -127,10 +138,14 @@ function SingleStamp() {
                 <div className="mt-8 flex justify-between items-center">
                   <p className="font-noto font-normal text-base leading-7">Views: 10k</p>
                   <div className="flex space-x-4">
-                    <img src={like} />
-                    <img src={download} />
-                    <img src={twitter} />
-                    <img src={copy} />
+                    <img className="inline dark:hidden" src={like} />
+                    <img className="inline dark:hidden" src={download} />
+                    <img className="inline dark:hidden" src={twitter} />
+                    <img className="inline dark:hidden" src={copy} />
+                    <img className="hidden dark:inline" src={like_dark} />
+                    <img className="hidden dark:inline" src={download_dark} />
+                    <img className="hidden dark:inline" src={twitter_dark} />
+                    <img className="hidden dark:inline" src={copy_dark} />
                   </div>
                 </div>
               </div>

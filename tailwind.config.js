@@ -6,7 +6,10 @@ export default {
   ],
   theme: {
     extend: {
-      textColor: "black",
+      textColor: {
+        'light': 'black',
+        'dark': 'white'
+      },
       fontFamily: {
         'suburbia': ['"SUBURBIA PERSONAL USE"', 'sans-serif'],
         'trispace': ['"Trispace"', 'sans-serif'],

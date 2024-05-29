@@ -1,6 +1,7 @@
 import Footer from "../layout/Footer"
 import Header from "../layout/Header"
 import chaos from "../assets/home/discover/chaos.png"
+import chaos_dark from "../assets/home/discover/chaos-dark.png"
 import graph from "../assets/asgne/graph.png"
 import top_border from "../assets/asgne/top-border.png"
 import YellowButton from "../components/common/YellowButton"
@@ -11,9 +12,10 @@ function AsgneToken() {
     <>
       <Header />
       <div className="relative">
-        <img src={chaos} />
+        <img className="inline dark:hidden w-full" src={chaos} />
+        <img className="hidden dark:inline w-full" src={chaos_dark} />
         <div className="absolute left-0 top-0 w-full h-full flex justify-center items-center">
-          <div className="w-fit rounded-[20px] opacity-[62] pt-10 pb-12 pl-14 pr-12 flex space-x-16" style={{boxShadow: "0px 4px 40px 0px #00000026"}}>
+          <div className="w-fit rounded-[20px] opacity-[62] pt-10 pb-12 pl-14 pr-12 flex space-x-16 dark:bg-[#19191F] dark:bg-opacity-[72%] dark:border-2 dark:border-[#F2F2F2] dark:border-opacity-50" style={{boxShadow: "0px 4px 40px 0px #00000026"}}>
             <div className="">
               <p className="font-noto font-normal text-2xl leading-[64px]">Total Balance:</p>
               <p className="font-trispace font-bold text-[40px] leading-[64px]">5,670.00</p>

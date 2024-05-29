@@ -6,12 +6,11 @@ import InfoCollection from './pages/InfoCollection';
 import SingleStamp from './pages/SingleStamp';
 
 function App() {
-
   return (
     <>
-      {/* <HomePage /> */}
+      <HomePage />
       {/* <InfoCollection /> */}
-      <FullCollection />
+      {/* <FullCollection /> */}
       {/* <SingleStamp /> */}
       {/* <AsgneToken /> */}
     </>
