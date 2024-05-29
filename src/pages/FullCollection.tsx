@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 
 import Sidebar from '../layout/Sidebar';
@@ -31,6 +32,7 @@ import grid19 from "../assets/full/grid19.png"
 import grid20 from "../assets/full/grid20.png"
 
 function SingleStamp() {
+  const { t } = useTranslation();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
@@ -46,18 +48,18 @@ function SingleStamp() {
         <img src={chaos_dark} className="w-full absolute z-0 hidden dark:inline" />
         <div className="w-full h-full relative z-10">
           <div className="md:container mx-auto py-12 md:py-24">
-            <p className="mt-6 text-center font-trispace font-semibold text-3xl leading-8">UNPRUNABLE UTXO ART, BECAUSE SATS DON'T EXIST</p>
+            <p className="mt-6 text-center font-trispace font-semibold text-3xl leading-8">{t("UNPRUNABLE UTXO ART, BECAUSE SATS DON'T EXIST")}</p>
             <div className='w-full flex justify-center'>
               <div className="mt-16 bg-opacity-62 dark:bg-[#19191F] dark:bg-opacity-[62%] py-6 pl-12 pr-8 flex justify-between items-center rounded-[10px] mb-16 flex-col md:flex-row w-2/3 md:w-full space-y-4 md:space-y-0" style={{boxShadow: "0px 4px 40px 0px #00000026"}}>
                 <div className="flex space-x-4 md:space-x-12 items-center flex-col md:flex-row space-y-4 md:space-y-0">
                   <div className="flex flex-col space-y-1 items-center md:items-start">
-                    <p className="font-news font-semibold text-lg leading-5">Name</p>
-                    <p className="font-trispace font-normal text-lg leading-5 text-[#969696] dark:text-[#ECECEC] text-center md:text-left">Stamp / Creator / TX / CPID</p>
+                    <p className="font-news font-semibold text-lg leading-5">{t("Name")}</p>
+                    <p className="font-trispace font-normal text-lg leading-5 text-[#969696] dark:text-[#ECECEC] text-center md:text-left">{t("Stamp / Creator / TX / CPID")}</p>
                   </div>
                   <div className="w-[1px] h-[60px] bg-[#969696] hidden md:block"></div>
                   <div className="flex flex-col space-y-1 items-center md:items-start">
-                    <p className="font-news font-semibold text-lg leading-5">Stamps</p>
-                    <p className="font-trispace font-normal text-lg leading-5 text-[#969696] dark:text-[#ECECEC]">Stamps: Classic</p>
+                    <p className="font-news font-semibold text-lg leading-5">{t("Stamps")}</p>
+                    <p className="font-trispace font-normal text-lg leading-5 text-[#969696] dark:text-[#ECECEC]">{t("Stamps: Classic")}</p>
                   </div>
                 </div>
                 <YellowButton title="Search" width={200} height={50} />

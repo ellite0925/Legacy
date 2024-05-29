@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import close from "../assets/layout/header/x.svg"
 
 interface CardProps {
@@ -6,6 +7,7 @@ interface CardProps {
 }
 
 function Sidebar(props: CardProps) {
+  const { t } = useTranslation();
 
   return (
     <>
@@ -16,43 +18,43 @@ function Sidebar(props: CardProps) {
           </button>
         </div>
         <div className="flex flex-col space-y-6">
-          <p className="font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">Collection</p>
+          <p className="font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">{t("Collection")}</p>
           <ul className="pl-4">
             <li>
-              <p className="font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">Collections</p>
+              <p className="font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">{t("Collections")}</p>
             </li>
             <li className="mt-6">
-              <p className="font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">Proof Of Publishing</p>
+              <p className="font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">{t("Proof Of Publishing")}</p>
             </li>
           </ul>
-          <p className="font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">Marketplace</p>
-          <p className="font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">ASNGE Token</p>
-          <p className="font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">Media</p>
+          <p className="font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">{t("Marketplace")}</p>
+          <p className="font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">{t("ASNGE Token")}</p>
+          <p className="font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">{t("Media")}</p>
           <ul className="pl-4">
             <li>
-              <p className="font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">Articles</p>
+              <p className="font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">{t("Articles")}</p>
             </li>
             <li className="mt-6">
-              <p className="font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">VIP Gallery</p>
+              <p className="font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">{t("VIP Gallery")}</p>
             </li>
             <li className="mt-6">
-              <p className="font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">NFT Games</p>
+              <p className="font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">{t("NFT Games")}</p>
             </li>
           </ul>
-          <p className="font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">Metaverse</p>
-          <p className="font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">About</p>
+          <p className="font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">{t("Metaverse")}</p>
+          <p className="font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">{t("About")}</p>
           <ul className="pl-4">
             <li>
-              <p className="font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">About ASNGE Project</p>
+              <p className="font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">{t("About ASNGE Project")}</p>
             </li>
             <li className="mt-6">
-              <p className="font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">Manifesto</p>
+              <p className="font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">{t("Manifesto")}</p>
             </li>
             <li className="mt-6">
-              <p className="font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">Partners</p>
+              <p className="font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">{t("Partners")}</p>
             </li>
           </ul>
-          <p className="font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">FAQ</p>
+          <p className="font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">{t("FAQ")}</p>
         </div>
       </div>
     </>

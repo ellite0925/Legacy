@@ -5,6 +5,7 @@ import {
   AccordionItemButton,
   AccordionItemPanel,
 } from 'react-accessible-accordion';
+import { useTranslation } from 'react-i18next';
 
 // Demo styles, see 'Styles' section below for some notes on use.
 import 'react-accessible-accordion/dist/fancy-example.css';
@@ -18,6 +19,7 @@ interface CardProps {
 }
 
 function LegacyAccordion(props: CardProps) {
+  const { t } = useTranslation();
   return (
     <>
       <Accordion allowMultipleExpanded={true} allowZeroExpanded={true} >
@@ -25,7 +27,7 @@ function LegacyAccordion(props: CardProps) {
             <AccordionItemHeading>
                 <AccordionItemButton className="bg-transparent p-4">
                   <div className="w-full flex justify-between items-center">
-                    <p className="font-trispace font-normal text-xl leading-7">{props.title}</p>
+                    <p className="font-trispace font-normal text-xl leading-7">{t(props.title)}</p>
                     <img className='accordion_arrow_down' src={arrow_down} />
                     <img className='accordion_arrow_up' src={arrow_up} />
                   </div>

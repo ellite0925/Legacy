@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 
 import Sidebar from '../layout/Sidebar';
@@ -21,6 +22,7 @@ import copy_dark from "../assets/single/copy-dark.png"
 import YellowButton from "../components/common/YellowButton"
 
 function SingleStamp() {
+  const { t } = useTranslation();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
@@ -36,8 +38,8 @@ function SingleStamp() {
         <img src={chaos_dark} className="w-full absolute z-0 hidden dark:inline" />
         <div className="w-full h-full relative z-10">
           <div className="md:container mx-auto py-16 px-4 md:px-0">
-            <p className="font-trispace font-medium text-center text-3xl md:text-left md:text-4xl leading-[46px]">Stamp 67114 A10028994648006722000</p>
-            <p className="mt-3 font-noto font-normal text-2xl leading-9 text-center md:text-left">Total Volume: 0.00567000 $398.77</p>
+            <p className="font-trispace font-medium text-center text-3xl md:text-left md:text-4xl leading-[46px]">{t("Stamp")} 67114 A10028994648006722000</p>
+            <p className="mt-3 font-noto font-normal text-2xl leading-9 text-center md:text-left">{t("Total Volume")}: 0.00567000 $398.77</p>
             <div className="mt-9 flex space-x-0 lg:space-x-12 flex-col lg:flex-row">
               <div className=" basis-1 lg:basis-1/2">
                 <div className="flex space-y-8 md:space-y-0 space-x-0 md:space-x-5 flex-col md:flex-row">
@@ -46,8 +48,8 @@ function SingleStamp() {
                       <img src={collection} />
                     </div>
                     <div className="flex-1 flex flex-col justify-between">
-                      <p className="font-noto font-normal text-base leading-6 text-[#636363] dark:text-[#ECECEC]">Collection</p>
-                      <p className="font-trispace font-bold text-xl leading-6">PIXEL</p>
+                      <p className="font-noto font-normal text-base leading-6 text-[#636363] dark:text-[#ECECEC]">{t("Collection")}</p>
+                      <p className="font-trispace font-bold text-xl leading-6">{t("PIXEL")}</p>
                     </div>
                   </div>
                   <div className="basis-1/2 flex space-x-4">
@@ -63,14 +65,14 @@ function SingleStamp() {
                 <p className="mt-8 text-[#636363] dark:text-[#ECECEC] font-normal text-base leading-6">Magna montes pharetra ac libero non aliquet. Orci neque mi justo scelerisque in. Nibh amet egestas mattis at consectetur vulputate lacus nisi molestie. </p>
                 <div className="mt-8 flex space-x-0 md:space-x-10 space-y-4 md:space-y-0 flex-col md:flex-row">
                   <div className="basis-1 md:basis-1/2 flex flex-col space-y-2 items-center">
-                    <p className="font-noto font-normal text-base leading-7">Current Price</p>
+                    <p className="font-noto font-normal text-base leading-7">{t("Current Price")}</p>
                     <div className="flex justify-between w-full">
                       <p className="text-[#F38E0C] font-trispace text-[26px] leading-[31px]">0.25 ETH</p>
                       <p className="font-trispace text-[20px] leading-[29px]">($3,429.65)</p>
                     </div>
                   </div>
                   <div className="basis-1 md:basis-1/2 flex flex-col space-y-2 items-center">
-                    <p className="font-noto font-normal text-base leading-7">Top Offer</p>
+                    <p className="font-noto font-normal text-base leading-7">{t("Top Offer")}</p>
                     <div className="flex justify-between w-full">
                       <p className="text-[#F38E0C] font-trispace text-[26px] leading-[31px]">0.15 ETH</p>
                       <p className="font-trispace text-[20px] leading-[29px]">($3,070.43)</p>
@@ -82,14 +84,14 @@ function SingleStamp() {
                 </div>
                 <div className="mt-8 rounded-xl bg-[#D9E0EC] dark:bg-black bg-opacity-20 border-2 border-opacity-50 border-[#F2F2F2] p-6 flex flex-col space-y-[10px]">
                   <p className="font-news font-bold text-2xl leading-7 opacity-100">
-                    Information
+                    {t("Information")}
                   </p>
                   <div className="flex justify-between">
-                    <p className="font-trispace font-normal text-base leading-6">Stamp number</p>
+                    <p className="font-trispace font-normal text-base leading-6">{t("Stamp number")}</p>
                     <p className="font-trispace font-normal text-base leading-6">#67114</p>
                   </div>
                   <div className="flex justify-between">
-                    <p className="font-trispace font-normal text-base leading-6">Asset Name</p>
+                    <p className="font-trispace font-normal text-base leading-6">{t("Asset Name")}</p>
                     <div className="flex space-x-2 items-center">
                       <p className="font-trispace font-normal text-base leading-6">A10028994648006722000</p>
                       <img className="inline dark:hidden" src={copy_icon} />
@@ -97,7 +99,7 @@ function SingleStamp() {
                     </div>
                   </div>
                   <div className="flex justify-between">
-                    <p className="font-trispace font-normal text-base leading-6">Issuer</p>
+                    <p className="font-trispace font-normal text-base leading-6">{t("Issuer")}</p>
                     <div className="flex space-x-2 items-center">
                       <p className="font-trispace font-normal text-base leading-6">1K6xT...3Rggi</p>
                       <img className="inline dark:hidden" src={copy_icon} />
@@ -105,23 +107,23 @@ function SingleStamp() {
                     </div>
                   </div>
                   <div className="flex justify-between">
-                    <p className="font-trispace font-normal text-base leading-6">Total Supply</p>
+                    <p className="font-trispace font-normal text-base leading-6">{t("Total Supply")}</p>
                     <p className="font-trispace font-normal text-base leading-6">13</p>
                   </div>
                   <div className="flex justify-between">
-                    <p className="font-trispace font-normal text-base leading-6">Divisible</p>
-                    <p className="font-trispace font-normal text-base leading-6">No</p>
+                    <p className="font-trispace font-normal text-base leading-6">{t("Divisible")}</p>
+                    <p className="font-trispace font-normal text-base leading-6">{t("No")}</p>
                   </div>
                   <div className="flex justify-between">
-                    <p className="font-trispace font-normal text-base leading-6">Locked</p>
-                    <p className="font-trispace font-normal text-base leading-6">Yes</p>
+                    <p className="font-trispace font-normal text-base leading-6">{t("Locked")}</p>
+                    <p className="font-trispace font-normal text-base leading-6">{t("Yes")}</p>
                   </div>
                   <div className="flex justify-between">
-                    <p className="font-trispace font-normal text-base leading-6">keyburn</p>
-                    <p className="font-trispace font-normal text-base leading-6">No</p>
+                    <p className="font-trispace font-normal text-base leading-6">{t("keyburn")}</p>
+                    <p className="font-trispace font-normal text-base leading-6">{t("No")}</p>
                   </div>
                   <div className="flex justify-between">
-                    <p className="font-trispace font-normal text-base leading-6">Block</p>
+                    <p className="font-trispace font-normal text-base leading-6">{t("Block")}</p>
                     <div className="flex space-x-2 items-center">
                       <p className="font-trispace font-normal text-base leading-6">794220</p>
                       <img className="inline dark:hidden" src={copy_icon} />
@@ -129,11 +131,11 @@ function SingleStamp() {
                     </div>
                   </div>
                   <div className="flex justify-between">
-                    <p className="font-trispace font-normal text-base leading-6">Destructions</p>
+                    <p className="font-trispace font-normal text-base leading-6">{t("Destructions")}</p>
                     <p className="font-trispace font-normal text-base leading-6">x8</p>
                   </div>
                   <div className="flex justify-between">
-                    <p className="font-trispace font-normal text-base leading-6">Transaction</p>
+                    <p className="font-trispace font-normal text-base leading-6">{t("Transaction")}</p>
                     <div className="flex space-x-2 items-center">
                       <p className="font-trispace font-normal text-base leading-6">9ad0b...5ab5b</p>
                       <img className="inline dark:hidden" src={copy_icon} />
@@ -145,7 +147,7 @@ function SingleStamp() {
               <div className="basis-1 lg:basis-1/2">
                 <img src={tetris} className="w-full hidden lg:inline" />
                 <div className="mt-8 flex justify-between items-center">
-                  <p className="font-noto font-normal text-base leading-7">Views: 10k</p>
+                  <p className="font-noto font-normal text-base leading-7">{t("Views")}: 10k</p>
                   <div className="flex space-x-4">
                     <img className="inline dark:hidden" src={like} />
                     <img className="inline dark:hidden" src={download} />

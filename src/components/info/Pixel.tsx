@@ -1,11 +1,14 @@
+import { useTranslation } from 'react-i18next';
+
 function Pixel() {
+  const { t } = useTranslation();
 
   return (
     <>
       <div className="md:container mx-auto pt-12 md:pt-24 py-24 flex flex-col space-y-8 px-4 md:px-0">
         <div>
           <p className="font-trispace text-3xl font-bold leading-9">
-            PIXEL Collection
+            {t("PIXEL Collection")}
           </p>
         </div>
         <div className="flex space-y-20 md:space-y-0 space-x-0 md:space-x-12 flex-col md:flex-row">
@@ -23,19 +26,19 @@ function Pixel() {
             </p>
             <div className="mt-6 py-3 flex">
               <p className="font-news text-lg font-bold leading-5 border-[#F38E0C] border-b-2">
-                View the full collection
+                {t("View the full collection")}
               </p>
             </div>
           </div>
           <div className="basis-1 md:basis-1/2">
             <div className="flex justify-between items-center">
-              <p className="font-trispace text-lg font-semibold leading-5">Minting Status</p>
+              <p className="font-trispace text-lg font-semibold leading-5">{t("Minting Status")}</p>
               <div className="bg-[#FF002E] rounded-[10px] w-[64px] h-[20px] flex justify-center items-center">
-                <p className="font-trispace font-normal text-sm leading-4 text-white">Close</p>
+                <p className="font-trispace font-normal text-sm leading-4 text-white">{t("Close")}</p>
               </div>
             </div>
             <div className="mt-10">
-              <p className="font-noto text-lg font-normal leading-6 text-[#636363]">Minted 125/125</p>
+              <p className="font-noto text-lg font-normal leading-6 text-[#636363]">{t("Minted")} 125/125</p>
               <div className="mt-3">
                 <div className="z-0 relative overflow-hidden h-5 mt-5 rounded-full bg-[rgb(53,48,74)]">
                   <div
@@ -56,7 +59,7 @@ function Pixel() {
               </div>
             </div>
               <button className="border-[#F38E0C] border-2 mt-10 w-full py-[14px] rounded-[10px]">
-                <p className="font-news font-normal text-lg leading-5 text-[#F38E0C]">Connect To MINT</p>
+                <p className="font-news font-normal text-lg leading-5 text-[#F38E0C]">{t("Connect To MINT")}</p>
               </button>
           </div>
         </div>
