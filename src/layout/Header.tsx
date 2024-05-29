@@ -1,10 +1,12 @@
 import logo from "../assets/layout/header/logo.png";
 import divider from "../assets/layout/header/divider.png";
+import divider_dark from "../assets/layout/header/divider-dark.png";
 import down_arrow from "../assets/layout/header/down-arrow.png";
 import down_arrow_dark from "../assets/layout/header/down-arrow-dark.png";
 import underline from "../assets/layout/header/underline.png";
 import underline_dark from "../assets/layout/header/underline-dark.png";
 import menu from "../assets/layout/header/menu.svg"
+import menu_dark from "../assets/layout/header/menu-dark.svg"
 
 interface HeaderProps {
   closeSidebar?: () => void
@@ -25,7 +27,8 @@ function Header(props: HeaderProps) {
               if (props.closeSidebar != undefined)
                 props.closeSidebar()
             }}>
-              <img src={menu} />
+              <img className="inline dark:hidden" src={menu} />
+              <img className="hidden dark:inline" src={menu_dark} />
             </button>
             <div className="space-x-6 items-center text-sm font-trispace font-normal leading-4 hidden xl:flex">
               <div className="flex items-center relative group">
@@ -68,7 +71,8 @@ function Header(props: HeaderProps) {
               <p>FAQ</p>
             </div>
             <div>
-              <img src={divider} />
+              <img className="inline dark:hidden" src={divider} />
+              <img className="hidden dark:inline" src={divider_dark} />
             </div>
             <div className="flex flex-col">
               <img className="inline dark:hidden" src={underline} />

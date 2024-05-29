@@ -1,3 +1,6 @@
+import { useState } from 'react';
+
+import Sidebar from '../layout/Sidebar';
 import Footer from "../layout/Footer"
 import Header from "../layout/Header"
 import chaos from "../assets/home/discover/chaos.png"
@@ -18,20 +21,26 @@ import copy_dark from "../assets/single/copy-dark.png"
 import YellowButton from "../components/common/YellowButton"
 
 function SingleStamp() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
 
   return (
     <>
-      <Header />
+      <Sidebar isOpen={isSidebarOpen} closeSidebar={toggleSidebar} />
+      <Header closeSidebar={toggleSidebar} />
       <div className="relative">
         <img src={chaos} className="w-full absolute z-0 inline dark:hidden" />
         <img src={chaos_dark} className="w-full absolute z-0 hidden dark:inline" />
         <div className="w-full h-full relative z-10">
-          <div className="md:container mx-auto py-16">
-            <p className="font-trispace font-medium text-4xl leading-[46px]">Stamp 67114 A10028994648006722000</p>
-            <p className="mt-3 font-noto font-normal text-2xl leading-9">Total Volume: 0.00567000 $398.77</p>
-            <div className="mt-9 flex space-x-12">
-              <div className="basis-1/2">
-                <div className="flex space-x-5">
+          <div className="md:container mx-auto py-16 px-4 md:px-0">
+            <p className="font-trispace font-medium text-center text-3xl md:text-left md:text-4xl leading-[46px]">Stamp 67114 A10028994648006722000</p>
+            <p className="mt-3 font-noto font-normal text-2xl leading-9 text-center md:text-left">Total Volume: 0.00567000 $398.77</p>
+            <div className="mt-9 flex space-x-0 lg:space-x-12 flex-col lg:flex-row">
+              <div className=" basis-1 lg:basis-1/2">
+                <div className="flex space-y-8 md:space-y-0 space-x-0 md:space-x-5 flex-col md:flex-row">
                   <div className="basis-1/2 flex space-x-4">
                     <div className="flex-none">
                       <img src={collection} />
@@ -52,15 +61,15 @@ function SingleStamp() {
                   </div>
                 </div>
                 <p className="mt-8 text-[#636363] dark:text-[#ECECEC] font-normal text-base leading-6">Magna montes pharetra ac libero non aliquet. Orci neque mi justo scelerisque in. Nibh amet egestas mattis at consectetur vulputate lacus nisi molestie. </p>
-                <div className="mt-8 flex space-x-10">
-                  <div className="basis-1/2 flex flex-col space-y-2 items-center">
+                <div className="mt-8 flex space-x-0 md:space-x-10 space-y-4 md:space-y-0 flex-col md:flex-row">
+                  <div className="basis-1 md:basis-1/2 flex flex-col space-y-2 items-center">
                     <p className="font-noto font-normal text-base leading-7">Current Price</p>
                     <div className="flex justify-between w-full">
                       <p className="text-[#F38E0C] font-trispace text-[26px] leading-[31px]">0.25 ETH</p>
                       <p className="font-trispace text-[20px] leading-[29px]">($3,429.65)</p>
                     </div>
                   </div>
-                  <div className="basis-1/2 flex flex-col space-y-2 items-center">
+                  <div className="basis-1 md:basis-1/2 flex flex-col space-y-2 items-center">
                     <p className="font-noto font-normal text-base leading-7">Top Offer</p>
                     <div className="flex justify-between w-full">
                       <p className="text-[#F38E0C] font-trispace text-[26px] leading-[31px]">0.15 ETH</p>
@@ -133,8 +142,8 @@ function SingleStamp() {
                   </div>
                 </div>
               </div>
-              <div className="basis-1/2">
-                <img src={tetris} className="w-full" />
+              <div className="basis-1 lg:basis-1/2">
+                <img src={tetris} className="w-full hidden lg:inline" />
                 <div className="mt-8 flex justify-between items-center">
                   <p className="font-noto font-normal text-base leading-7">Views: 10k</p>
                   <div className="flex space-x-4">

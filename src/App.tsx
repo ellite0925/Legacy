@@ -8,11 +8,11 @@ import SingleStamp from './pages/SingleStamp';
 function App() {
   return (
     <>
-      <HomePage />
+      {/* <HomePage /> */}
       {/* <InfoCollection /> */}
       {/* <FullCollection /> */}
       {/* <SingleStamp /> */}
-      {/* <AsgneToken /> */}
+      <AsgneToken />
     </>
   )
 }

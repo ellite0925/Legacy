@@ -9,7 +9,7 @@ function Sidebar(props: CardProps) {
 
   return (
     <>
-      <div className={`xl:hidden block px-4 py-8 text-black fixed top-0 left-0 h-full w-64 bg-[#F7F9FB] z-50 transition-transform duration-300 transform ${props.isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+      <div className={`xl:hidden block px-4 py-8 text-black fixed top-0 left-0 h-full w-64 bg-[#F7F9FB] dark:bg-[#F38E0C] z-50 transition-transform duration-300 transform ${props.isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="flex justify-end mb-12">
           <button onClick={props.closeSidebar}>
             <img src={close} />

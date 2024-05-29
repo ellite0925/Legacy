@@ -2,14 +2,14 @@ function Pixel() {
 
   return (
     <>
-      <div className="md:container mx-auto py-24 flex flex-col space-y-8">
+      <div className="md:container mx-auto pt-12 md:pt-24 py-24 flex flex-col space-y-8 px-4 md:px-0">
         <div>
           <p className="font-trispace text-3xl font-bold leading-9">
             PIXEL Collection
           </p>
         </div>
-        <div className="flex space-x-12">
-          <div className="basis-1/2">
+        <div className="flex space-y-20 md:space-y-0 space-x-0 md:space-x-12 flex-col md:flex-row">
+          <div className="basis-1 md:basis-1/2">
             <p className="text-base font-normal leading-6">
               Vulputate nunc egestas neque et venenatis facilisis tincidunt ac accumsan. Eget risus sed sem enim viverra sit ut lacus scelerisque. In tristique mauris euismod ultricies in eu placerat nisl morbi.
             </p>
@@ -27,7 +27,7 @@ function Pixel() {
               </p>
             </div>
           </div>
-          <div className="basis-1/2">
+          <div className="basis-1 md:basis-1/2">
             <div className="flex justify-between items-center">
               <p className="font-trispace text-lg font-semibold leading-5">Minting Status</p>
               <div className="bg-[#FF002E] rounded-[10px] w-[64px] h-[20px] flex justify-center items-center">
