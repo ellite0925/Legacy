@@ -57,6 +57,7 @@ function Sidebar(props: CardProps) {
             </li>
           </ul>
           <p className="font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">{t("FAQ")}</p>
+          <p className="font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">{t("Connect Wallet")}</p>
         </div>
       </div>
     </>

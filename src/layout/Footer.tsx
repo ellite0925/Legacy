@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import i18n from "../utils/i18n";
 import LegacyAccordion from "../components/layout/footer/LegacyAccordion";
+import { FaDiscord, FaTimes, FaInstagram } from 'react-icons/fa';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTwitter, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 import logo from "../assets/layout/header/logo.png";
 import discord from "../assets/layout/footer/discord.png";
 import instagram from "../assets/layout/footer/instagram.png";
@@ -111,16 +114,19 @@ function Footer() {
             </div>
             <div className="mt-6 flex space-x-4 items-center justify-center lg:justify-start">
               <button onClick={() => {window.location.href = 'https://discord.com'}}>
-                <img className="inline dark:hidden" src={discord} />
-                <img className="hidden dark:inline" src={discord_dark} />
+                <FaDiscord
+                  className='cursor-pointer text-black dark:text-white hover:text-[#F38E0C]'
+                  size={32}
+                />
               </button>
               <button onClick={() => {window.location.href = 'https://twitter.com'}}>
-                <img className="inline dark:hidden" src={twitter} />
-                <img className="hidden dark:inline" src={twitter_dark} />
+                <FontAwesomeIcon size='2x' className="text-black dark:text-white hover:text-[#F38E0C]" icon={faXTwitter} />
               </button>
               <button onClick={() => {window.location.href = 'https://instagram.com'}}>
-                <img className="inline dark:hidden" src={instagram} />
-                <img className="hidden dark:inline" src={instagram_dark} />
+                <FaInstagram
+                  className='cursor-pointer text-black dark:text-white hover:text-[#F38E0C]'
+                  size={32}
+                />
               </button>
             </div>
           </div>

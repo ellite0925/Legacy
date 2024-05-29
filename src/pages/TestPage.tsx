@@ -27,9 +27,9 @@ function TestPage() {
       start: 0,
       onUpdate(self) {
         if (self.progress === 1 && self.direction > 0) { // && !self.wrapping
-          wrapForward(self);
+          wrapForward();
         } else if (self.progress < 1e-5 && self.direction < 0) { // && !self.wrapping
-          wrapBackward(self);
+          wrapBackward();
         } else {
           scrub.vars.totalTime = snap((iteration + self.progress) * seamlessLoop.duration());
           scrub.invalidate().restart();
@@ -46,13 +46,14 @@ function TestPage() {
     triggerRef.current = trigger;
   }, [snap]);
 
-  const wrapForward = (trigger: ScrollTrigger) => {
+  const wrapForward = () => {
     iteration++;
     // trigger.wrapping = true;
-    trigger.scroll(trigger.start + 1);
+    scrubTo(scrubRef.current!.vars.totalTime + spacing);
+    // trigger.scroll(trigger.start + 1);
   };
 
-  const wrapBackward = (trigger: ScrollTrigger) => {
+  const wrapBackward = () => {
     iteration--;
     if (iteration < 0) {
       iteration = 9;
@@ -60,16 +61,18 @@ function TestPage() {
       scrubRef.current?.pause();
     }
     // trigger.wrapping = true;
-    trigger.scroll(trigger.end - 1);
+    // trigger.scroll(trigger.end - 1);
+    scrubTo(scrubRef.current!.vars.totalTime - spacing);
   };
 
   const scrubTo = (totalTime: number) => {
     let progress = (totalTime - seamlessLoopRef.current!.duration() * iteration) / seamlessLoopRef.current!.duration();
     if (progress > 1) {
-      wrapForward(triggerRef.current!);
+      wrapForward();
     } else if (progress < 0) {
-      wrapBackward(triggerRef.current!);
+      wrapBackward();
     } else {
+      seamlessLoopRef.current?.time(totalTime);
       triggerRef.current?.scroll(triggerRef.current.start + progress * (triggerRef.current.end - triggerRef.current.start));
     }
   };
