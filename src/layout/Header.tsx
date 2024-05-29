@@ -84,9 +84,10 @@ function Header(props: HeaderProps) {
               <img className="inline dark:hidden" src={divider} />
               <img className="hidden dark:inline" src={divider_dark} />
             </div>
-            <div className="flex flex-col cursor-pointer">
-              <img className="inline dark:hidden" src={underline} />
-              <img className="hidden dark:inline" src={underline_dark} />
+            <div className="flex flex-col cursor-pointer hover:text-[#F38E0C] dark:text-white">
+              <p className="font-news font-normal text-lg leading-5 border-b-2 border-[#F38E0C] py-2.5">{t("Connect Wallet")}</p>
+              {/* <img className="inline dark:hidden" src={underline} />
+              <img className="hidden dark:inline" src={underline_dark} /> */}
             </div>
           </div>
         </div>

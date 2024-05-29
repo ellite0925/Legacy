@@ -85,8 +85,9 @@ function InfoHeader(props: InfoHeaderProps) {
                     <img className="inline dark:hidden" src={divider} />
                     <img className="hidden dark:inline" src={divider_dark} />
                   </div>
-                  <div className="flex flex-col cursor-pointer">
-                    <img src={underline} />
+                  <div className="flex flex-col cursor-pointer hover:text-[#F38E0C]">
+                    <p className="font-news font-normal text-lg leading-5 border-b-2 border-[#F38E0C] py-2.5">{t("Connect Wallet")}</p>
+                    {/* <img src={underline} /> */}
                   </div>
                 </div>
               </div>

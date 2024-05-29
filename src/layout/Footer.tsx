@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import i18n from "../utils/i18n";
+import LegacyAccordion from "../components/layout/footer/LegacyAccordion";
 import logo from "../assets/layout/header/logo.png";
 import discord from "../assets/layout/footer/discord.png";
 import instagram from "../assets/layout/footer/instagram.png";
@@ -9,7 +10,8 @@ import discord_dark from "../assets/layout/footer/discord-dark.png";
 import instagram_dark from "../assets/layout/footer/instagram-dark.png";
 import twitter_dark from "../assets/layout/footer/twitter-dark.png";
 import us from "../assets/layout/footer/us.png";
-import LegacyAccordion from "../components/layout/footer/LegacyAccordion";
+import sun from "../assets/layout/footer/sun.svg";
+import moon from "../assets/layout/footer/moon.svg";
 
 function Footer() {
   const { t } = useTranslation();
@@ -152,7 +154,10 @@ function Footer() {
           <div className="mx-4 mb-3.5 mt-3.5 flex justify-between items-center flex-col sm:flex-row space-y-4 sm:space-y-0">
             <p className="font-noto font-normal text-xs leading-3 text-center">{t("Copyrights &copy; 2024 LegacyToken. All rights reserved.")}</p>
             <div className='flex space-x-4'>
-              <button onClick={handleThemeToggle}>Toggle Theme</button>
+              <button onClick={handleThemeToggle}>
+                {isDark == "true" && <img src={sun} />}
+                {isDark == "false" && <img src={moon} />}
+              </button>
               <div className="flex space-x-1.5 items-center">
                 <img src={us} />
                 <select className="dark:bg-black font-trispace font-normal text-sm leading-4" onChange={handleLanguageChange} value={language}>
