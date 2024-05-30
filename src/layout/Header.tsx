@@ -42,7 +42,7 @@ function Header(props: HeaderProps) {
                   <img className="hidden dark:inline" src={down_arrow_dark} />
                 </div>
                 <div className="absolute group-hover:block hidden bg-white dark:bg-[#313131] rounded-xl p-2 top-10 left-0 z-20 w-[200px] border-[0.5px] border-black border-opacity-10" style={{boxShadow: "0px 10px 15px 0px #0000000D, 0px 25px 37px 0px #0000001A"}}>
-                  <p className="font-trispace font-normal text-sm leading-5 pl-2 py-3 cursor-pointer">{t("Collections")}</p>
+                  <p className="font-trispace font-normal text-sm leading-5 pl-2 py-3 cursor-pointer" onClick={() => {navigate('/info_collection')}}>{t("Collections")}</p>
                   <div className="mt-1 w-full h-[1px] bg-[#E4E4EB] dark:bg-[#4F4F4F]"></div>
                   <p className="mt-1 font-trispace font-normal text-sm leading-5 pl-2 py-3 cursor-pointer">{t("Proof Of Publishing")}</p>
                 </div>
