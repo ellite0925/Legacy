@@ -27,9 +27,9 @@ function TestPage() {
       start: 0,
       onUpdate(self) {
         if (self.progress === 1 && self.direction > 0) { // && !self.wrapping
-          wrapForward();
+          wrapForward(self);
         } else if (self.progress < 1e-5 && self.direction < 0) { // && !self.wrapping
-          wrapBackward();
+          wrapBackward(self);
         } else {
           scrub.vars.totalTime = snap((iteration + self.progress) * seamlessLoop.duration());
           scrub.invalidate().restart();
@@ -46,33 +46,30 @@ function TestPage() {
     triggerRef.current = trigger;
   }, [snap]);
 
-  const wrapForward = () => {
+  const wrapForward = (trigger: ScrollTrigger) => {
     iteration++;
     // trigger.wrapping = true;
-    scrubTo(scrubRef.current!.vars.totalTime + spacing);
-    // trigger.scroll(trigger.start + 1);
+    trigger.scroll(trigger.start + 1);
   };
 
-  const wrapBackward = () => {
+  const wrapBackward = (trigger: ScrollTrigger) => {
     iteration--;
     if (iteration < 0) {
-      iteration = 9;
+      iteration = 0;
       seamlessLoopRef.current?.totalTime(seamlessLoopRef.current.totalTime() + seamlessLoopRef.current.duration() * 10);
       scrubRef.current?.pause();
     }
     // trigger.wrapping = true;
-    // trigger.scroll(trigger.end - 1);
-    scrubTo(scrubRef.current!.vars.totalTime - spacing);
+    trigger.scroll(trigger.end - 1);
   };
 
   const scrubTo = (totalTime: number) => {
     let progress = (totalTime - seamlessLoopRef.current!.duration() * iteration) / seamlessLoopRef.current!.duration();
     if (progress > 1) {
-      wrapForward();
+      wrapForward(triggerRef.current!);
     } else if (progress < 0) {
-      wrapBackward();
+      wrapBackward(triggerRef.current!);
     } else {
-      seamlessLoopRef.current?.time(totalTime);
       triggerRef.current?.scroll(triggerRef.current.start + progress * (triggerRef.current.end - triggerRef.current.start));
     }
   };
@@ -131,45 +128,45 @@ function TestPage() {
 
   return (
     <>
-    <div className="gallery">
-      <ul className="cards">
-        <li>0</li>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-        <li>6</li>
-        <li>7</li>
-        <li>8</li>
-        <li>9</li>
-        <li>10</li>
-        <li>11</li>
-        <li>12</li>
-        <li>13</li>
-        <li>14</li>
-        <li>15</li>
-        <li>16</li>
-        <li>17</li>
-        <li>18</li>
-        <li>19</li>
-        <li>20</li>
-        <li>21</li>
-        <li>22</li>
-        <li>23</li>
-        <li>24</li>
-        <li>25</li>
-        <li>26</li>
-        <li>27</li>
-        <li>28</li>
-        <li>29</li>
-        <li>30</li>
-      </ul>
-      <div className="actions">
-        <button className="next" onClick={handleNextClick}>Next</button>
-        <button className="prev" onClick={handlePrevClick}>Previous</button>
-      </div>
-    </div>
+        <div className="gallery">
+          <ul className="cards">
+            <li>0</li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+            <li>12</li>
+            <li>13</li>
+            <li>14</li>
+            <li>15</li>
+            <li>16</li>
+            <li>17</li>
+            <li>18</li>
+            <li>19</li>
+            <li>20</li>
+            <li>21</li>
+            <li>22</li>
+            <li>23</li>
+            <li>24</li>
+            <li>25</li>
+            <li>26</li>
+            <li>27</li>
+            <li>28</li>
+            <li>29</li>
+            <li>30</li>
+          </ul>
+          <div className="actions">
+            <button className="next" onClick={handleNextClick}>Next</button>
+            <button className="prev" onClick={handlePrevClick}>Previous</button>
+          </div>
+        </div>
     </>
   )
 }

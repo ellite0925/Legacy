@@ -158,7 +158,7 @@ function Footer() {
         <div>
           <div className="w-full h-[1px] bg-[#858584] dark:bg-[#525253]"></div>
           <div className="mx-4 mb-3.5 mt-3.5 flex justify-between items-center flex-col sm:flex-row space-y-4 sm:space-y-0">
-            <p className="font-noto font-normal text-xs leading-3 text-center">{t("Copyrights &copy; 2024 LegacyToken. All rights reserved.")}</p>
+            <p className="font-noto font-normal text-xs leading-3 text-center">{t("Copyrights")} &copy; {t("2024 LegacyToken. All rights reserved.")}</p>
             <div className='flex space-x-4'>
               <button onClick={handleThemeToggle}>
                 {isDark == "true" && <img src={sun} />}

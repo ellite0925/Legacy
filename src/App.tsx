@@ -7,12 +7,14 @@ import SingleStamp from './pages/SingleStamp';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import TestPage from './pages/TestPage';
+import GsapPage from './pages/GsapPage';
 
 function App() {
   return (
     <>
       <Router>
         <Routes>
+          <Route path="/gsap" element={<GsapPage />} />
           <Route path="/test" element={<TestPage />} />
           <Route path="/" element={<HomePage />} />
           <Route path="/info_collection" element={<InfoCollection />} />
