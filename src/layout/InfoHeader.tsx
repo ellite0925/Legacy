@@ -4,7 +4,6 @@ import logo from "../assets/layout/header/logo.png";
 import divider from "../assets/layout/info_header/divider.png";
 import divider_dark from "../assets/layout/info_header/divider-dark.png";
 import white_down_arrow from "../assets/layout/info_header/white-down-arrow.png";
-import underline from "../assets/layout/info_header/underline.png";
 import banner from "../assets/layout/info_header/banner.png";
 import menu_dark from "../assets/layout/header/menu-dark.svg"
 
@@ -31,13 +30,6 @@ function InfoHeader(props: InfoHeaderProps) {
                   <p className="hidden xl:block text-2xl md:text-4xl font-suburbia font-light leading-6">legacytoken</p>
                 </div>
                 <div className="flex space-x-2 md:space-x-6 items-center">
-                  <button className="block xl:hidden" onClick={() => {
-                    if (props.closeSidebar != undefined)
-                      props.closeSidebar()
-                  }}>
-                    {/* <img className="inline dark:hidden" src={menu} /> */}
-                    <img className="" src={menu_dark} />
-                  </button>
                   <div className="hidden xl:flex space-x-6 items-center text-sm font-trispace font-normal leading-4">
                     <div className="flex items-center relative group">
                       <div className='flex items-center cursor-pointer'>
@@ -52,7 +44,7 @@ function InfoHeader(props: InfoHeaderProps) {
                     </div>
                     <p className='cursor-pointer'>{t("Marketplace")}</p>
                     <p onClick={() => {navigate('/asgne_token')}} className='cursor-pointer'>{t("ASNGE Token")}</p>
-                    <p className='cursor-pointer'>{t("Media")}</p>
+                    <p className='cursor-pointer'>{t("Articles")}</p>
                     <p className='cursor-pointer'>{t("Metaverse")}</p>
                     <div className="flex items-center relative group">
                       <div className='flex items-center cursor-pointer'>
@@ -69,7 +61,7 @@ function InfoHeader(props: InfoHeaderProps) {
                     </div>
                     <p className='cursor-pointer'>{t("FAQ")}</p>
                   </div>
-                  <div className='block'>
+                  <div className='hidden xl:block'>
                     <img className="inline dark:hidden" src={divider} />
                     <img className="hidden dark:inline" src={divider_dark} />
                   </div>
@@ -77,6 +69,12 @@ function InfoHeader(props: InfoHeaderProps) {
                     <p className="font-news font-normal text-lg leading-5 border-white hover:border-b-2 hover:border-[#F38E0C] py-2.5 transition-all duration-300 ease-in-out">{t("Connect Wallet")}</p>
                     {/* <img src={underline} /> */}
                   </div>
+                  <button className="block xl:hidden" onClick={() => {
+                    if (props.closeSidebar != undefined)
+                      props.closeSidebar()
+                  }}>
+                    <img className="" src={menu_dark} />
+                  </button>
                 </div>
               </div>
             </div>

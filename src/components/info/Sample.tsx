@@ -1,9 +1,7 @@
 import { useTranslation } from 'react-i18next';
-import carousel from "../../assets/info/sample/carousel.png"
-import carousel_dark from "../../assets/info/sample/carousel-dark.png"
 import gsap from 'gsap'; // <-- import GSAP
 import { useGSAP } from '@gsap/react'; // <-- import the hook from our React package
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 import one from "../../assets/info/sample/one.png";
 import two from "../../assets/info/sample/two.png";

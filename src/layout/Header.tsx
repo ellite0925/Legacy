@@ -5,8 +5,6 @@ import divider from "../assets/layout/header/divider.png";
 import divider_dark from "../assets/layout/header/divider-dark.png";
 import down_arrow from "../assets/layout/header/down-arrow.png";
 import down_arrow_dark from "../assets/layout/header/down-arrow-dark.png";
-import underline from "../assets/layout/header/underline.png";
-import underline_dark from "../assets/layout/header/underline-dark.png";
 import menu from "../assets/layout/header/menu.svg"
 import menu_dark from "../assets/layout/header/menu-dark.svg"
 
@@ -27,13 +25,6 @@ function Header(props: HeaderProps) {
             <p className="hidden xl:block text-2xl md:text-4xl font-suburbia font-light leading-6">legacytoken</p>
           </div>
           <div className="flex space-x-2 md:space-x-6 items-center">
-            <button className="block xl:hidden" onClick={() => {
-              if (props.closeSidebar != undefined)
-                props.closeSidebar()
-            }}>
-              <img className="inline dark:hidden" src={menu} />
-              <img className="hidden dark:inline" src={menu_dark} />
-            </button>
             <div className="space-x-6 items-center text-sm font-trispace font-normal leading-4 hidden xl:flex">
               <div className="flex items-center relative group">
                 <div className='flex items-center cursor-pointer'>
@@ -67,7 +58,7 @@ function Header(props: HeaderProps) {
               </div>
               <p className='cursor-pointer'>{t("FAQ")}</p>
             </div>
-            <div className='block'>
+            <div className='hidden xl:block'>
               <img className="inline dark:hidden" src={divider} />
               <img className="hidden dark:inline" src={divider_dark} />
             </div>
@@ -76,6 +67,13 @@ function Header(props: HeaderProps) {
               {/* <img className="inline dark:hidden" src={underline} />
               <img className="hidden dark:inline" src={underline_dark} /> */}
             </div>
+            <button className="block xl:hidden" onClick={() => {
+              if (props.closeSidebar != undefined)
+                props.closeSidebar()
+            }}>
+              <img className="inline dark:hidden" src={menu} />
+              <img className="hidden dark:inline" src={menu_dark} />
+            </button>
           </div>
         </div>
         <div className="h-[1px] w-full bg-[#E4E4EB]"></div>

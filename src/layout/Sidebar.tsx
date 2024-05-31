@@ -1,6 +1,15 @@
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import {
+  Accordion,
+  AccordionItem,
+  AccordionItemHeading,
+  AccordionItemButton,
+  AccordionItemPanel,
+} from 'react-accessible-accordion';
 import close from "../assets/layout/header/x.svg"
+import down_arrow from "../assets/layout/header/down-arrow.png";
+import down_arrow_dark from "../assets/layout/header/down-arrow-dark.png";
 
 interface CardProps {
   isOpen: boolean;
@@ -20,30 +29,72 @@ function Sidebar(props: CardProps) {
           </button>
         </div>
         <div className="flex flex-col space-y-6 relative">
-          <div className='group relative'>
-            <p className="pl-4 font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">{t("Collection")}</p>
-            <div className="absolute group-hover:block hidden bg-white dark:bg-[#313131] rounded-xl p-2 top-0 left-[256px] z-20 w-[200px] border-[0.5px] border-black border-opacity-10 dark:text-white" style={{boxShadow: "0px 10px 15px 0px #0000000D, 0px 25px 37px 0px #0000001A"}}>
-              <p className="font-trispace font-normal text-sm leading-5 pl-2 py-3 cursor-pointer" onClick={() => {navigate('/info_collection')}}>{t("Collections")}</p>
-              <div className="mt-1 w-full h-[1px] bg-[#E4E4EB] dark:bg-[#4F4F4F]"></div>
-              <p className="mt-1 font-trispace font-normal text-sm leading-5 pl-2 py-3 cursor-pointer">{t("Proof Of Publishing")}</p>
-            </div>
+          <div className='relative'>
+            <Accordion allowMultipleExpanded={true} allowZeroExpanded={true} >
+              <AccordionItem>
+                  <AccordionItemHeading>
+                      <AccordionItemButton className="bg-transparent">
+                        <div className="w-full flex justify-between items-center hover:bg-gray-200 dark:hover:bg-yellow-700 cursor-pointer">
+                          <p className="pl-4 font-trispace font-normal text-sm leading-5">{t("Collection")}</p>
+                          <div className='block dark:hidden'>
+                            <img className='accordion_arrow_down pr-4' src={down_arrow} />
+                            <img className='accordion_arrow_up pr-4' src={down_arrow} style={{transform: "scaleY(-1)"}} />
+                          </div>
+                          <div className='hidden dark:flex'>
+                            <img className='accordion_arrow_down pr-4' src={down_arrow_dark} style={{transform: "scaleY(-1)"}} />
+                            <img className='accordion_arrow_up pr-4' src={down_arrow_dark} />
+                          </div>
+                        </div>
+                      </AccordionItemButton>
+                  </AccordionItemHeading>
+                  <AccordionItemPanel className='p-0 pt-4 pl-8'>
+                    <p className='hover:bg-gray-200 dark:hover:bg-yellow-700 cursor-pointer font-trispace font-normal text-sm leading-5'>
+                      {t("Collections")}
+                    </p>
+                    <p className='hover:bg-gray-200 dark:hover:bg-yellow-700 cursor-pointer mt-4 font-trispace font-normal text-sm leading-5'>
+                      {t("Proof Of Publishing")}
+                    </p>
+                  </AccordionItemPanel>
+              </AccordionItem>
+            </Accordion>
           </div>
-          <p className="pl-4 font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">{t("Marketplace")}</p>
-          <p className="pl-4 font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer" onClick={() => {navigate('/asgne_token')}}>{t("ASNGE Token")}</p>
-          <p className="pl-4 font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">{t("Articles")}</p>
-          <p className="pl-4 font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">{t("Metaverse")}</p>
-          <div className='group relative'>
-            <p className="pl-4 font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">{t("About")}</p>
-            <div className="absolute group-hover:block hidden bg-white dark:bg-[#313131] rounded-xl p-2 top-0 left-[256px] z-20 w-[200px] border-[0.5px] border-black border-opacity-10 dark:text-white" style={{boxShadow: "0px 10px 15px 0px #0000000D, 0px 25px 37px 0px #0000001A"}}>
-              <p className="font-trispace font-normal text-sm leading-5 pl-2 py-3 cursor-pointer">{t("About ASNGE Project")}</p>
-              <div className="mt-1 w-full h-[1px] bg-[#E4E4EB] dark:bg-[#4F4F4F]"></div>
-              <p className="mt-1 font-trispace font-normal text-sm leading-5 pl-2 py-3 cursor-pointer">{t("Manifesto")}</p>
-              <div className="mt-1 w-full h-[1px] bg-[#E4E4EB] dark:bg-[#4F4F4F]"></div>
-              <p className="mt-1 font-trispace font-normal text-sm leading-5 pl-2 py-3 cursor-pointer">{t("Partners")}</p>
-            </div>
+          <p className="pl-4 font-trispace font-normal text-sm leading-5 dark:hover:bg-yellow-700 hover:bg-gray-200 cursor-pointer">{t("Marketplace")}</p>
+          <p className="pl-4 font-trispace font-normal text-sm leading-5 hover:bg-gray-200 dark:hover:bg-yellow-700 cursor-pointer" onClick={() => {navigate('/asgne_token')}}>{t("ASNGE Token")}</p>
+          <p className="pl-4 font-trispace font-normal text-sm leading-5 hover:bg-gray-200 dark:hover:bg-yellow-700 cursor-pointer">{t("Articles")}</p>
+          <p className="pl-4 font-trispace font-normal text-sm leading-5 hover:bg-gray-200 dark:hover:bg-yellow-700 cursor-pointer">{t("Metaverse")}</p>
+          <div className='relative'>
+            <Accordion allowMultipleExpanded={true} allowZeroExpanded={true} >
+              <AccordionItem>
+                  <AccordionItemHeading>
+                      <AccordionItemButton className="bg-transparent">
+                        <div className="w-full flex justify-between items-center dark:hover:bg-yellow-700 hover:bg-gray-200 cursor-pointer">
+                          <p className="pl-4 font-trispace font-normal text-sm leading-5">{t("About")}</p>
+                          <div className='block dark:hidden'>
+                            <img className='accordion_arrow_down pr-4' src={down_arrow} />
+                            <img className='accordion_arrow_up pr-4' src={down_arrow} style={{transform: "scaleY(-1)"}} />
+                          </div>
+                          <div className='hidden dark:flex'>
+                            <img className='accordion_arrow_down pr-4' src={down_arrow_dark} style={{transform: "scaleY(-1)"}} />
+                            <img className='accordion_arrow_up pr-4' src={down_arrow_dark} />
+                          </div>
+                        </div>
+                      </AccordionItemButton>
+                  </AccordionItemHeading>
+                  <AccordionItemPanel className='p-0 pt-4 pl-8'>
+                    <p className='hover:bg-gray-200 dark:hover:bg-yellow-700 cursor-pointer font-trispace font-normal text-sm leading-5'>
+                      {t("About ASNGE Project")}
+                    </p>
+                    <p className='hover:bg-gray-200 dark:hover:bg-yellow-700 cursor-pointer mt-4 font-trispace font-normal text-sm leading-5'>
+                      {t("Manifesto")}
+                    </p>
+                    <p className='hover:bg-gray-200 dark:hover:bg-yellow-700 cursor-pointer mt-4 font-trispace font-normal text-sm leading-5'>
+                      {t("Partners")}
+                    </p>
+                  </AccordionItemPanel>
+              </AccordionItem>
+            </Accordion>
           </div>
-          <p className="pl-4 font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">{t("FAQ")}</p>
-          <p className="pl-4 font-trispace font-normal text-sm leading-5 hover:bg-gray-200 cursor-pointer">{t("Connect Wallet")}</p>
+          <p className="pl-4 font-trispace font-normal text-sm leading-5 hover:bg-gray-200 dark:hover:bg-yellow-700 cursor-pointer">{t("FAQ")}</p>
         </div>
       </div>
     </>
