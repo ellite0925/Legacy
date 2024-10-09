@@ -8,6 +8,7 @@ import SingleStamp from './pages/SingleStamp';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import TestPage from './pages/TestPage';
 import GsapPage from './pages/GsapPage';
+import Rituales from './pages/Rituales';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/full_collection" element={<FullCollection />} />
           <Route path="/single_stamp" element={<SingleStamp />} />
           <Route path="/asgne_token" element={<AsgneToken />} />
+          <Route path="/rituales" element={<Rituales />} />
         </Routes>
       </Router>
     </>
